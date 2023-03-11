@@ -165,9 +165,12 @@ class _HomeFeedsState extends State<HomeFeeds>
       });
     print(responseData);
 
+    allPost.addAll(modal.post);
+    /*
     for (int i = 0; i < modal.post.length; i++) {
       allPost.add(modal.post[i]);
     }
+    */
     print(json.encode(allPost));
 
     if (mounted)
@@ -1015,7 +1018,7 @@ samuel 01/08
   Widget storyWidget() {
     return Card(
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.20,
+        height: MediaQuery.of(context).size.height * 0.25,
         child: Column(
           children: [
             new Padding(

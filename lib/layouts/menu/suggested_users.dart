@@ -234,7 +234,10 @@ class _SuggestedUsersState extends State<SuggestedUsers> {
                         ),
                       ),
                       Container(
-                        margin: const EdgeInsets.only(left: 10),
+                        margin: const EdgeInsets.only(
+                          left: 10,
+                          right: 10,
+                        ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
@@ -292,40 +295,42 @@ class _SuggestedUsersState extends State<SuggestedUsers> {
                             SizedBox(
                               width: 10,
                             ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 10.0),
-                              height: 38,
-                              width: (context.width() - (3 * 16)) * 0.33,
-                              decoration: const BoxDecoration(
-                                color: Color(0xffE5E6EB),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(5.0),
-                                ),
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  'Message',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 16,
-                                    letterSpacing: 0.0,
-                                    color: Colors.black,
+                            Expanded(
+                              child: Container(
+                                margin: const EdgeInsets.only(top: 10.0),
+                                height: 38,
+                                // width: (context.width() - (3 * 16)) * 0.35,
+                                decoration: const BoxDecoration(
+                                  color: Color(0xffE5E6EB),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(5.0),
                                   ),
                                 ),
-                              ),
-                            ).onTap(() {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Chat(
-                                    peerID: lists["id"],
-                                    peerUrl: lists["profile_pic"],
-                                    peerName: lists["username"],
+                                child: const Center(
+                                  child: Text(
+                                    'Message',
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 16,
+                                      letterSpacing: 0.0,
+                                      color: Colors.black,
+                                    ),
                                   ),
                                 ),
-                              );
-                            }),
+                              ).onTap(() {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Chat(
+                                      peerID: lists["id"],
+                                      peerUrl: lists["profile_pic"],
+                                      peerName: lists["username"],
+                                    ),
+                                  ),
+                                );
+                              }),
+                            ),
                           ],
                         ),
                       ),
